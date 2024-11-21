@@ -1,0 +1,253 @@
+/* Reset Básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f8f8f8;
+  line-height: 1.6;
+}
+
+/* Header modificado */
+header.main-header {
+  background: #222;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1000; /* Añadido para estar sobre el hero */
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+}
+
+/* Modificaciones en la navegación */
+.nav {
+  position: relative;
+  z-index: 1000;
+}
+
+.menu-sandwich {
+  position: relative;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.menu-items {
+  list-style: none;
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: #333;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1001; /* Añadido */
+}
+
+/* Hero Section modificado */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background-image: url('imagenes/camisetas-champions-league-2024-25-1-537x360.jpg'); /* Reemplaza con tu ruta de imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  margin-top: -70px;
+  padding-top: 90px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.hero h2,
+.hero p,
+.hero button {
+  position: relative;
+  z-index: 2;
+}
+
+.hero button {
+  padding: 10px 20px;
+  background: #ff4747;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.hero button:hover {
+  background: #ff7777;
+}
+
+/* Menú y Submenú */
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  z-index: 1001;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.submenu {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #333;
+  display: none;
+  min-width: 150px;
+  border-radius: 5px;
+  padding: 5px 0;
+  z-index: 1002; /* Añadido */
+}
+
+.submenu li {
+  padding: 0;
+}
+
+.submenu a {
+  padding: 10px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.submenu a:hover {
+  background: #444;
+}
+
+.menu li:hover .submenu {
+  display: block;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Escritorio */
+@media (min-width: 768px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* El resto de tus estilos permanecen igual */
+.popular-items {
+  padding: 20px;
+  text-align: center;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.item {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.item h4 {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.item p {
+  color: #555;
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.add-to-cart {
+  background: #ff4747;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.add-to-cart:hover {
+  background: #ff7777;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: #fff;
+}
+
